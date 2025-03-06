@@ -23,14 +23,26 @@ impl GamePlay {
 
     pub fn update(&mut self, delta_time: f32) {
         let speed = 500.0; // Speed in units per second
+        let mut direction = vec2(0.0, 0.0);
 
         if is_key_down(KeyCode::Right) {
-            self.player_sprite.move_by(vec2(speed * delta_time, 0.0));
+            direction.x += 1.0;
         }
         if is_key_down(KeyCode::Left) {
-            self.player_sprite.move_by(vec2(-speed * delta_time, 0.0));
+            direction.x -= 1.0;
+        }
+        if is_key_down(KeyCode::Up) {
+            direction.y -= 1.0;
+        }
+        if is_key_down(KeyCode::Down) {
+            direction.y += 1.0;
         }
 
+        if direction.length() > 0.0 {
+            direction = direction.normalize();
+        }
+
+        self.player_sprite.move_by(direction * speed * delta_time);
         self.player_sprite.update(delta_time);
     }
 

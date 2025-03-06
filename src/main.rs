@@ -17,6 +17,7 @@ fn window_conf() -> Conf {
         fullscreen: false,
         window_width: 1280,
         window_height: (1280.0 / ASPECT_RATIO) as i32,
+        window_resizable: false,
         platform: miniquad::conf::Platform {
             linux_backend: miniquad::conf::LinuxBackend::WaylandWithX11Fallback,
             ..Default::default()
