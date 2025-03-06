@@ -1,6 +1,5 @@
 use std::f32::consts;
 use macroquad::prelude::*;
-use crate::state::GameState;
 use tori::  animated_sprite::AnimatedSprite;
 use crate::assets;
 
