@@ -27,6 +27,9 @@ fn window_conf() -> Conf {
 
 #[macroquad::main(window_conf)]
 async fn main() {
+
+    set_pc_assets_folder("assets");
+
     let mut state = GameState::MainMenu;
     let mut menu = Menu::new().await;
     let mut gameplay = GamePlay::new().await;

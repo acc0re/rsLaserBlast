@@ -34,8 +34,6 @@ impl<'a> Menu<'a> {
                 direction: vec2(0f32, -1f32), // To the top
             });
         }
-        set_pc_assets_folder("assets");
-        let tex = load_texture("gfx/spaceship.png").await.unwrap();
 
         Self {
             selected_index: 0,
