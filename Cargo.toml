@@ -1,0 +1,10 @@
+[package]
+name = "rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+macroquad = "0.4.13"
+macroquad-text = "0.2.0"
+hecs = "0.10.5"
+tori={path="/home/alex/dev/tori"}
