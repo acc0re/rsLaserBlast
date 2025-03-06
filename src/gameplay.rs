@@ -1,7 +1,6 @@
 use std::f32::consts;
 use macroquad::prelude::*;
 use tori::  animated_sprite::AnimatedSprite;
-use crate::assets;
 
 pub struct GamePlay {
     player_sprite: AnimatedSprite,
@@ -11,7 +10,7 @@ impl GamePlay {
     pub async fn new() -> Self {
         Self {
             player_sprite: AnimatedSprite::new(
-                &*assets::get_gfx_path("spaceship.png"),
+                "gfx/spaceship.png",
                 vec2(10.0, 10.0),
                 5f32,
                 consts::PI, //Looking down

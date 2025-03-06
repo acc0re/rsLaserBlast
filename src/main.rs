@@ -2,7 +2,6 @@ mod state;
 mod menu;
 mod settings;
 mod gameplay;
-mod assets;
 
 use macroquad::prelude::*;
 use state::GameState;
@@ -31,8 +30,6 @@ async fn main() {
     let mut state = GameState::MainMenu;
     let mut menu = Menu::new().await;
     let mut gameplay = GamePlay::new().await;
-
-
 
     loop {
         clear_background(BLACK);

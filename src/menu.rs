@@ -1,11 +1,10 @@
 use macroquad::prelude::*;
 use std::f32::consts;
 use tori::animated_sprite::AnimatedSprite;
-use crate::assets;
 use crate::state::GameState;
 use macroquad_text::Fonts;
 
-const ARCADECLASSIC: &[u8] = include_bytes!("ttf/ARCADECLASSIC.TTF");
+const ARCADECLASSIC: &[u8] = include_bytes!("../ttf/ARCADECLASSIC.TTF");
 
 pub struct Menu<'a> {
     selected_index: usize,
@@ -35,11 +34,13 @@ impl<'a> Menu<'a> {
                 direction: vec2(0f32, -1f32), // To the top
             });
         }
+        set_pc_assets_folder("assets");
+        let tex = load_texture("gfx/spaceship.png").await.unwrap();
 
         Self {
             selected_index: 0,
             spaceship_sprite: AnimatedSprite::new(
-                &*assets::get_gfx_path("spaceship.png"),
+                "gfx/spaceship.png",
                 vec2(screen_width() / 2f32, 50.0),
                 5f32,
                 consts::PI, // Looking down
